@@ -4,6 +4,9 @@
 
 #include <QVTKOpenGLWidget.h>
 
+#include <vtkRenderer.h>
+#include <vtkSmartPointer.h>
+
 class MainWindow : public QVTKOpenGLWidget {
     Q_OBJECT
 
@@ -13,4 +16,9 @@ public:
 
 protected:
     void closeEvent(QCloseEvent *e);
+    void keyReleaseEvent(QKeyEvent *e);
+
+private:
+    vtkSmartPointer<vtkRenderer> renderer;
+    vtkSmartPointer<vtkRenderWindow> renderWindow;
 };

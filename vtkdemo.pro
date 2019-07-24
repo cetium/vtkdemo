@@ -21,18 +21,12 @@ INCLUDEPATH += $$VTKDIR/GUISupport/Qt $$VTKDIR/GUISupport/QtOpenGL
 
 
 SOURCES += \
-#    main.cpp \
+    main.cpp \
     mainwindow.cpp \
-#    Cone6.cxx \
-    main2.cxx \
-    SimpleView.cxx
 
 HEADERS += \
     mainwindow.h \
-    SimpleView.h
 
 FORMS += \
-    SimpleView.ui
 
 RESOURCES += \
-    Icons/icons.qrc

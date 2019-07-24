@@ -1,13 +1,19 @@
+#include "mainwindow.h"
 #include <QApplication>
-#include "GraphicsView.hpp"
 
-int main(int argc, char **argv)
-{
-  QApplication app(argc, argv);
+#include <QSurfaceFormat>
 
-  GraphicsView view;
-  view.show();
+#include <vtkOpenGLRenderWindow.h>
 
-  view.resize(800, 600);
-  return app.exec();
+int main(int argc, char **argv) {
+    QApplication app(argc, argv);
+
+    vtkOpenGLRenderWindow::SetGlobalMaximumNumberOfMultiSamples(8);      //1
+    QSurfaceFormat::setDefaultFormat(QVTKOpenGLWidget::defaultFormat()); //2
+
+    MainWindow view;
+    view.show();
+
+    view.resize(800, 600);
+    return app.exec();
 }
